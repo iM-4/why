@@ -109,26 +109,33 @@ header video:active {
 }
 
 /* تنسيق عرض لغات البرمجة */
+/* تنسيق عرض لغات البرمجة */
 .programming-container {
-    display: flex; /* لجعل العناصر تتوزع أفقيًا */
-    justify-content: center; /* توسيط العناصر */
-    flex-wrap: wrap; /* يسمح للعناصر باللف إلى سطر جديد إذا كانت المساحة غير كافية */
-    margin: 20px 0; /* مسافة من الأعلى والأسفل */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    gap: 10px; /* مسافة بين العناصر */
 }
 
 .programming-item {
-    margin: 10px; /* مسافة بين العناصر */
-    text-align: center; /* توسيط النص تحت الصورة */
-    transition: transform 0.3s; /* إضافة تأثير انتقال */
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .programming-item:hover {
-    transform: scale(1.1); /* تأثير تكبير عند التمرير فوق العنصر */
+    transform: scale(1.1);
 }
 
+
 .programming-item img {
-    width: 30px; /* حجم الصور */
-    height: 30px;
+    width: 40px; /* حجم الصور */
+    height: 40px;
+    margin-bottom: 5px; /* مسافة بين الصورة والنص */
 }
 /* Academic Skills Container */
 .academic-container {
@@ -172,4 +179,13 @@ header video:active {
         padding: 10px; /* تقليل الحشوة على الجوال */
         margin-top: 10px; /* تقليل المسافة من الأعلى */
     }
+    .programming-item img {
+        width: 30px; /* تقليل حجم الصور على الجوال */
+        height: 30px;
+    }
+
+    .programming-item {
+        margin: 5px; /* تقليل المسافة بين العناصر على الجوال */
+    }
+
 }

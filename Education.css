@@ -69,7 +69,7 @@ header video {
 
 /* تنسيق قسم البكالوريوس في الأمن السيبراني */
 #bacCyber {
-    background-image: url(/Photos/uoj.png);
+    background-image: url(uoj.png);
     background-repeat: no-repeat;
     background-size: 200px auto; /* حجم الصورة الخلفية */
     background-position: right 20px top 10px; /* موقع الصورة */
