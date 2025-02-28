@@ -7,6 +7,7 @@ body {
     color: #fff;
 }
 
+/* تنسيق القائمة */
 nav {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 10px 0;
@@ -34,7 +35,7 @@ nav ul li a:hover {
     text-decoration: underline; /* تأثير عند التمرير */
 }
 
-/* Roadmap Styling */
+/* تنسيق الهيدر */
 header {
     text-align: center;
     padding: 50px;
@@ -42,6 +43,7 @@ header {
     color: white;
 }
 
+/* تنسيق المسار المنحني */
 .road-map {
     position: relative;
     display: flex;
@@ -50,7 +52,6 @@ header {
     margin-top: 50px;
 }
 
-/* Curved Path Styling */
 .curved-path {
     position: absolute;
     width: 4px;
@@ -62,7 +63,7 @@ header {
     z-index: 1;
 }
 
-/* Certificate styling */
+/* تنسيق الشهادات */
 .certificates {
     display: flex;
     flex-direction: column;
@@ -73,7 +74,7 @@ header {
     z-index: 2;
 }
 
-/* Certificate box styling */
+/* تنسيق صندوق الشهادة */
 .certificate {
     width: 300px;
     padding: 20px;
@@ -91,7 +92,7 @@ header {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Alternating left and right positioning */
+/* تبادل الشهادات بين اليمين واليسار */
 .certificate:nth-child(odd) {
     align-self: flex-start;
     margin-left: 15%;
@@ -102,16 +103,20 @@ header {
     margin-right: 15%;
 }
 
-/* For smaller screens, stack certificates vertically */
+/* تحسين تجربة الجوال */
 @media (max-width: 767px) {
     .certificates {
         flex-direction: column;
     }
 
     .certificate {
-        width: 80%;
+        width: 90%; /* زيادة العرض على الجوال */
         align-self: center;
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .curved-path {
+        display: none; /* إخفاء المسار المنحني على الجوال */
     }
 }
