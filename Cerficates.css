@@ -105,18 +105,35 @@ header {
 
 /* تحسين تجربة الجوال */
 @media (max-width: 767px) {
+    /* تحسين القائمة */
+    nav ul li {
+        display: block; /* جعل العناصر عمودية */
+        margin: 10px 0; /* زيادة المسافة بين العناصر */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* تقليل حجم الخط */
+    }
+
+    /* تحسين الهيدر */
+    header {
+        padding: 30px; /* تقليل الحشوة */
+    }
+
+    /* تحسين الشهادات */
     .certificates {
-        flex-direction: column;
+        gap: 30px; /* تقليل المسافة بين الشهادات */
     }
 
     .certificate {
         width: 90%; /* زيادة العرض على الجوال */
-        align-self: center;
+        padding: 15px; /* تقليل الحشوة */
         margin-left: 0;
         margin-right: 0;
     }
 
+    /* إخفاء المسار المنحني على الجوال */
     .curved-path {
-        display: none; /* إخفاء المسار المنحني على الجوال */
+        display: none;
     }
 }
