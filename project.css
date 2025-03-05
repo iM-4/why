@@ -1,0 +1,80 @@
+/* Basic styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e; /* خلفية داكنة */
+    color: #fff;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    text-align: center;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px; /* مسافة بين العناصر */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* إزالة الخط السفلي */
+    font-size: 18px; /* حجم الخط */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00; /* تغيير اللون عند التمرير */
+    transform: scale(1.1); /* تكبير النص قليلاً */
+}
+/* تنسيق الهيدر */
+header {
+    text-align: center;
+    padding: 50px;
+    background-color: #282c34;
+    color: white;
+}
+.ProjectDetails{
+    background-color: white;
+    color: black;
+    padding: 20px;
+    max-width: 85%;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    text-align: left;
+    line-height: 1.5;
+}
+@media (max-width: 768px) {
+    nav ul li {
+        display: block; /* جعل العناصر عمودية */
+        margin: 10px 0; /* زيادة المسافة بين العناصر */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* تقليل حجم الخط */
+    }
+    .ProjectDetails {
+        max-width: 95%;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .ProjectDetails {
+        max-width: 100%;
+        margin: 15px auto;
+    }
+}

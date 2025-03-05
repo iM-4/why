@@ -9,16 +9,21 @@ nav {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 10px 0;
     text-align: center;
+    
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline; /* جعل العناصر أفقيًا */
     margin: 0 15px; /* مسافة بين العناصر */
 }
 
@@ -26,10 +31,12 @@ nav ul li a {
     color: white;
     text-decoration: none; /* إزالة الخط السفلي */
     font-size: 18px; /* حجم الخط */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline; /* تأثير عند التمرير */
+    color: #ffcc00; /* تغيير اللون عند التمرير */
+    transform: scale(1.1); /* تكبير النص قليلاً */
 }
 
 /* تنسيق الهيدر */
@@ -109,33 +116,26 @@ header video:active {
 }
 
 /* تنسيق عرض لغات البرمجة */
-/* تنسيق عرض لغات البرمجة */
 .programming-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 20px 0;
-    gap: 10px; /* مسافة بين العناصر */
+    display: flex; /* لجعل العناصر تتوزع أفقيًا */
+    justify-content: center; /* توسيط العناصر */
+    flex-wrap: wrap; /* يسمح للعناصر باللف إلى سطر جديد إذا كانت المساحة غير كافية */
+    margin: 20px 0; /* مسافة من الأعلى والأسفل */
 }
 
 .programming-item {
-    margin: 10px;
-    text-align: center;
-    transition: transform 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 10px; /* مسافة بين العناصر */
+    text-align: center; /* توسيط النص تحت الصورة */
+    transition: transform 0.3s; /* إضافة تأثير انتقال */
 }
 
 .programming-item:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* تأثير تكبير عند التمرير فوق العنصر */
 }
 
-
 .programming-item img {
-    width: 40px; /* حجم الصور */
-    height: 40px;
-    margin-bottom: 5px; /* مسافة بين الصورة والنص */
+    width: 30px; /* حجم الصور */
+    height: 30px;
 }
 /* Academic Skills Container */
 .academic-container {
@@ -167,6 +167,14 @@ header video:active {
 }
 
 @media (max-width: 768px) {
+    nav ul li {
+        display: block; /* جعل العناصر عمودية */
+        margin: 10px 0; /* زيادة المسافة بين العناصر */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* تقليل حجم الخط */
+    }
     header {
         height: 200px; /* تقليل ارتفاع الهيدر على الجوال */
     }
@@ -179,13 +187,24 @@ header video:active {
         padding: 10px; /* تقليل الحشوة على الجوال */
         margin-top: 10px; /* تقليل المسافة من الأعلى */
     }
-    .programming-item img {
-        width: 30px; /* تقليل حجم الصور على الجوال */
-        height: 30px;
+}
+@media (max-width: 576px) {
+    header {
+        height: 150px;
     }
 
-    .programming-item {
-        margin: 5px; /* تقليل المسافة بين العناصر على الجوال */
+    .header-content {
+        padding: 8px;
+        margin-top: 8px;
     }
 
+    #about, #skill, #acadSkill {
+        max-width: 100%;
+        margin: 15px auto;
+    }
+
+    .academic-item {
+        width: 100px;
+        padding: 5px 10px;
+    }
 }

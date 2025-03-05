@@ -11,16 +11,20 @@ nav {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 10px 0;
     text-align: center;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline; /* جعل العناصر أفقيًا */
     margin: 0 15px; /* مسافة بين العناصر */
 }
 
@@ -28,10 +32,12 @@ nav ul li a {
     color: white;
     text-decoration: none; /* إزالة الخط السفلي */
     font-size: 18px; /* حجم الخط */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline; /* تأثير عند التمرير */
+    color: #ffcc00; /* تغيير اللون عند التمرير */
+    transform: scale(1.1); /* تكبير النص قليلاً */
 }
 
 /* تنسيق الهيدر */
@@ -43,6 +49,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0); /* خلفية داكنة لتقليل تأثير الفيديو */
 }
 
 /* تنسيق الفيديو داخل الهيدر */
@@ -54,22 +61,28 @@ header video {
     height: 100%;
     object-fit: cover; /* تغطية الهيدر بالكامل */
     z-index: -1;
+    opacity: 0.5; /* تقليل شفافية الفيديو */
+    transition: opacity 0.3s ease;
 }
+
+
 
 /* تنسيق النص داخل الهيدر */
 .header-content {
     position: relative;
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 22px;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
     text-align: center;
     color: white;
+    transition: transform 0.3s ease;
 }
+
 
 /* تنسيق قسم البكالوريوس في الأمن السيبراني */
 #bacCyber {
-    background-image: url(uoj.png);
+    background-image: url(/Photos/uoj.png);
     background-repeat: no-repeat;
     background-size: 200px auto; /* حجم الصورة الخلفية */
     background-position: right 20px top 10px; /* موقع الصورة */
@@ -84,22 +97,54 @@ header video {
     display: flex;
     flex-direction: column;
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#bacCyber:hover {
+    transform: translateY(-5px); /* رفع القسم قليلاً عند التمرير */
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.3); /* زيادة الظل */
 }
 
 /* تحسين تجربة الجوال */
 @media (max-width: 768px) {
+    nav ul li {
+        display: block; /* جعل العناصر عمودية */
+        margin: 10px 0; /* زيادة المسافة بين العناصر */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* تقليل حجم الخط */
+    }
     header {
         height: 120px; /* تقليل ارتفاع الهيدر على الجوال */
     }
 
     .header-content {
         font-size: 18px; /* تقليل حجم النص على الجوال */
-        padding: 8px 16px; /* تقليل الحشوة */
+        padding: 10px; /* تقليل الحشوة */
     }
 
     #bacCyber {
         background-size: 150px auto; /* تقليل حجم الصورة الخلفية على الجوال */
         background-position: right 10px top 10px; /* تعديل موقع الصورة */
         padding: 15px; /* تقليل الحشوة */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* زيادة المسافة بين العناصر على الجوال */
+    }
+}
+@media (max-width: 576px) {
+    header {
+        height: 100px;
+    }
+
+    .header-content {
+        padding: 8px;
+    }
+
+    #bacCyber {
+        max-width: 100%;
+        margin: 15px auto;
     }
 }

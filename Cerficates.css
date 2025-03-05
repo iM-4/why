@@ -12,16 +12,20 @@ nav {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 10px 0;
     text-align: center;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline; /* جعل العناصر أفقيًا */
     margin: 0 15px; /* مسافة بين العناصر */
 }
 
@@ -29,10 +33,12 @@ nav ul li a {
     color: white;
     text-decoration: none; /* إزالة الخط السفلي */
     font-size: 18px; /* حجم الخط */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline; /* تأثير عند التمرير */
+    color: #ffcc00; /* تغيير اللون عند التمرير */
+    transform: scale(1.1); /* تكبير النص قليلاً */
 }
 
 /* تنسيق الهيدر */
@@ -105,7 +111,6 @@ header {
 
 /* تحسين تجربة الجوال */
 @media (max-width: 767px) {
-    /* تحسين القائمة */
     nav ul li {
         display: block; /* جعل العناصر عمودية */
         margin: 10px 0; /* زيادة المسافة بين العناصر */
@@ -114,25 +119,27 @@ header {
     nav ul li a {
         font-size: 16px; /* تقليل حجم الخط */
     }
-
-    /* تحسين الهيدر */
-    header {
-        padding: 30px; /* تقليل الحشوة */
-    }
-
-    /* تحسين الشهادات */
     .certificates {
-        gap: 30px; /* تقليل المسافة بين الشهادات */
+        flex-direction: column;
     }
 
     .certificate {
         width: 90%; /* زيادة العرض على الجوال */
-        padding: 15px; /* تقليل الحشوة */
+        align-self: center;
         margin-left: 0;
         margin-right: 0;
     }
 
-    /* إخفاء المسار المنحني على الجوال */
+    .curved-path {
+        display: none; /* إخفاء المسار المنحني على الجوال */
+    }
+}
+@media (max-width: 576px) {
+    .certificate {
+        width: 90%;
+        padding: 8px;
+    }
+
     .curved-path {
         display: none;
     }
